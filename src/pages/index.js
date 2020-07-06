@@ -199,6 +199,7 @@ export const query = graphql`
         frontmatter {
           description
           homepage
+          cosmicapplink
           title
           twitter
         }

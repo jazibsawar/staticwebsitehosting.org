@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Octicon from 'react-component-octicons'
 import { EntypoTwitter } from 'react-entypo'
 import Stat from './stat'
-import DeployButton from './deploybutton'
+import InstallButton from './install-button'
 import DataPoint from './datapoint'
 
 const TwitterIcon = styled(EntypoTwitter)`
@@ -45,18 +45,6 @@ const CardBodyLink = styled(Link)`
   }
 `
 
-function getStarterTemplateRepoUrl(repo, repoHost = 'github') {
-  if (!repo) {
-    return
-  }
-  switch (repoHost) {
-    case 'github':
-      return `https://github.com/${repo}`
-    case 'gitlab':
-      return `https://gitlab.com/${repo}`
-  }
-}
-
 const Title = styled.h4`
   margin: 0 -18px 0px;
   font-weight: normal;
@@ -90,7 +78,7 @@ const Card = props => {
     id,
     title,
     description,
-    startertemplaterepo,
+    cosmicapplink,
     fields,
     stats: { stars, issues, forks, followers } = {},
     previousStats: {
@@ -101,7 +89,7 @@ const Card = props => {
     } = {},
     previousStatsAgeInDays,
   } = props
-
+  console.log(followers)
   return (
     <CardContainer>
       <CardBodyLink to={`/${id}`}>
@@ -144,12 +132,12 @@ const Card = props => {
           />
         </StatsContainer>
         <Description>{description}</Description>
-        {fields.map(field => (
+        {/* {fields.map(field => (
           <DataPoint key={field.name} value={props[field.name]} label={field.label} />
-        ))}
+        ))} */}
       </CardBodyLink>
-      {startertemplaterepo && (
-        <DeployButton repo={getStarterTemplateRepoUrl(startertemplaterepo)} />
+      {cosmicapplink && (
+        <InstallButton link={cosmicapplink} />
       )}
     </CardContainer>
   )

@@ -30,18 +30,6 @@ const ControlBar = ({
   onChangeSort,
 }) => (
   <DropdownRow>
-    <DropdownGroup label="Filter">
-      {filters.map(({ field, emptyLabel, values }) => (
-        <Dropdown
-          key={field}
-          field={field}
-          emptyLabel={emptyLabel}
-          options={values.map(value => ({ value, label: value }))}
-          selection={currentFilter[field]}
-          onChange={onChangeFilter.bind(null, field)}
-        />
-      ))}
-    </DropdownGroup>
     <DropdownGroup label="Sort">
       <Dropdown
         name="sort"

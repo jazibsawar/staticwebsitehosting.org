@@ -67,6 +67,7 @@ const Layout = ({ projectTitle, projectUrl, projectId, children }) => {
     shareText: defaultShareText,
     shareTextProjectStart,
     shareTextProjectEnd,
+    navLinks
   } = data.site.siteMetadata
   const shareUrl = projectId ? `${siteUrl}/${projectId}` : siteUrl
   const shareText = projectId
@@ -80,10 +81,6 @@ const Layout = ({ projectTitle, projectUrl, projectId, children }) => {
     <>
       <Global styles={globalStyles} />
 
-      <Banner>
-        Check out the videos from Jamstack Conf Virtual, May 27. <a href="https://www.youtube.com/watch?v=w9yrrQBBKos&list=PL58Wk5g77lF8jzqp_1cViDf-WilJsAvqT" target="_blank" rel="noopener noreferrer">Watch&nbsp;the&nbsp;presentations</a>
-      </Banner>
-
       <Hero siteTitle={data.site.siteMetadata.title} shareText={shareText} shareUrl={shareUrl} />
       <Nav>
         <NavLink to="/about">About</NavLink>
@@ -91,8 +88,8 @@ const Layout = ({ projectTitle, projectUrl, projectId, children }) => {
         <NavAnchor href="https://jamstack.org" target="_blank" rel="noopener noreferrer">
           About Jamstack
         </NavAnchor>
-        <NavAnchor href="https://headlesscms.org" target="_blank" rel="noopener noreferrer">
-          Need a Static CMS?
+        <NavAnchor href="https://cosmicjs.com" target="_blank" rel="noopener noreferrer">
+          Need a Static Site CMS?
         </NavAnchor>
       </Nav>
       <Container>{children}</Container>

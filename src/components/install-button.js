@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-const DeployButton = styled(({ repo, className }) => (
-  <a href="https://app.cosmicjs.com/add-bucket?import_bucket=5eff8acd3ea035000753b4b9"><img alt="" src="https://web-assets.cosmicjs.com/images/powered-by-cosmic.svg" /></a>
+const installButton = styled(({ link, className }) => (
+  <a className={className} href={link}><img alt="" width="30" src="https://web-assets.cosmicjs.com/images/logo.svg" />Install on Cosmic</a>
 ))`
   display: flex;
   justify-content: center;
@@ -29,4 +29,4 @@ const DeployButton = styled(({ repo, className }) => (
   }
 `
 
-export default DeployButton
+export default installButton

@@ -120,8 +120,6 @@ async function getProjectData(graphql) {
           html
           frontmatter {
             homepage
-            license
-            repohost
             title
             twitter
           }

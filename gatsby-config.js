@@ -25,14 +25,14 @@ module.exports = {
     shareTextProjectStart: 'Check out ',
     shareTextProjectEnd: ', a static website host on the staticwebsitehosting.org leaderboard.',
     footerMarkdown: oneLine`
-      Static Website Hosting is hosted and maintained by [Cosmic](https://www.cosmicjs.com), the perfect way to
+      Static Website Hosting is maintained by [Cosmic](https://www.cosmicjs.com), the perfect way to
       manage content for your [Jamstack sites and apps](https://jamstack.org).
     `,
     copyrightName: 'Cosmic JS Inc.',
     promoMarkdown: stripIndent`
       ## Need to connect a CMS for your Jamstack website?
 
-      For generators with the "Install on Cosmic" button, you can install a new site from a template
+      For generators with the "Install Template" button, you can install a new site from a template
       with one click and connect to your favorite static website hosting provider. Add your content team, set up webhooks for automattic content updates, and more.
     `,
     navLinks: [
