@@ -8,7 +8,7 @@ Contributions are always welcome, no matter how large or small. Before contribut
 To run this project locally, clone the repo and install dependencies:
 
 ```sh
-git clone https://github.com/netlify/staticgen
+git clone https://github.com/cosmicjs/staticwebsitehosting.org
 cd staticgen
 npm install
 npm start

@@ -62,7 +62,7 @@ const Hero = ({ siteTitle, shareUrl, shareText }) => (
         <LogoText>{siteTitle}</LogoText>
       </LogoLink>
     </HeroHeading>
-    <HeroSubheading>A List of Static Site Generators for Jamstack Sites</HeroSubheading>
+    <HeroSubheading>A List of Static Website Hosts for Jamstack Sites</HeroSubheading>
 
     <ShareButtonGroup>
       {['twitter', 'reddit'].map(type => (
@@ -71,7 +71,7 @@ const Hero = ({ siteTitle, shareUrl, shareText }) => (
     </ShareButtonGroup>
 
     <GitHubCorner
-      href="https://github.com/netlify/staticgen"
+      href="https://github.com/cosmicjs/staticwebsitehosting.org"
       bannerColor="#313d3e"
       size="100"
       svgStyle={{ zIndex: 300 }}

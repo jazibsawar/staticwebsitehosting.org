@@ -7,40 +7,38 @@ const description = oneLine`
 
 module.exports = {
   siteMetadata: {
-    url: 'https://staticgen.com',
-    title: `StaticGen`,
+    url: 'https://staticwebsitehosting.com',
+    title: `Static Website Hosting`,
     description: oneLine`
       Kick off your next, great Gatsby project with this default starter. This barebones starter
       ships with the main Gatsby configuration files you might need.
     `,
-    author: `@netlify`,
+    author: `@cosmicjs`,
     image: 'https://staticgen.com/images/staticgen.png',
-    repo: 'https://github.com/netlify/staticgen',
-    homeTitle: 'StaticGen | Top Open Source Static Site Generators',
-    subtitle: 'A List of Static Site Generators for Jamstack Sites',
+    repo: 'https://github.com/cosmicjs/staticwebsitehosting.org',
+    homeTitle: 'Static Website Hosts | Top Static Website Hosting',
+    subtitle: 'A List of Static Website Hosts for Jamstack Sites',
     description,
     socialPreviewImageFilename: 'staticgen.png',
     shareButtons: ['twitter', 'reddit'],
-    shareText: 'Check out StaticGen, a leaderboard of open source static site generators.',
+    shareText: 'Check out Static Website Hosting, a leaderboard of top static website hosts.',
     shareTextProjectStart: 'Check out ',
-    shareTextProjectEnd: ', an open source static site generator on the staticgen.com leaderboard.',
+    shareTextProjectEnd: ', a static website host on the staticwebsitehosting.org leaderboard.',
     footerMarkdown: oneLine`
-      StaticGen is hosted and maintained by [Netlify](https://www.netlify.com), the perfect way to
-      deploy your [Jamstack sites and apps](https://www.netlify.com/jamstack).
+      Static Website Hosting is hosted and maintained by [Cosmic](https://www.cosmicjs.com), the perfect way to
+      manage content for your [Jamstack sites and apps](https://jamstack.org).
     `,
-    copyrightName: 'Netlify',
+    copyrightName: 'Cosmic JS Inc.',
     promoMarkdown: stripIndent`
-      ## Get started with one click!
+      ## Need to connect a CMS for your Jamstack website?
 
-      For generators with the "Deploy to Netlify" button, you can deploy a new site from a template
-      with one click. Get HTTPS, continuous delivery, and bring a custom domain, free of charge.
-
-      Want your own Deploy to Netlify button? [Learn more
-      here](https://www.netlify.com/docs/deploy_button/).
+      For generators with the "Install on Cosmic" button, you can install a new site from a template
+      with one click and connect to your favorite static website hosting provider. Add your content team, set up webhooks for automattic content updates, and more.
     `,
     navLinks: [
       { url: 'https://jamstack.org', text: 'About Jamstack' },
-      { url: 'https://headlesscms.org', text: 'Need a Static CMS?' },
+      { url: 'https://staticgen.com', text: 'Need a Static Site Generator?' },
+      { url: 'https://cosmicjs.com', text: 'Need a Static Site CMS?' },
     ],
     fallbackSortField: 'title',
     sorts: [

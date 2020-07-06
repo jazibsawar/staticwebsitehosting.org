@@ -199,12 +199,6 @@ export const query = graphql`
         frontmatter {
           description
           homepage
-          language
-          license
-          repohost
-          startertemplaterepo
-          repo
-          templates
           title
           twitter
         }
