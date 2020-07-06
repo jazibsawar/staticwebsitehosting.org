@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { EntypoHome, EntypoTwitter, EntypoGithub } from 'react-entypo'
+import { EntypoHome, EntypoTwitter, EntypoCredit } from 'react-entypo'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -67,6 +67,7 @@ const Project = ({ pageContext }) => {
     repo,
     repohost,
     homepage,
+    pricing,
     stars,
     followers,
     twitter,
@@ -87,14 +88,14 @@ const Project = ({ pageContext }) => {
             <EntypoIcon Icon={EntypoTwitter} /> {twitter} ({followers})
           </DetailLink>
         )}
-        {repo && (
-          <DetailLink href={`https://${repohost || 'github'}.com/${repo}`}>
-            <EntypoIcon Icon={EntypoGithub} /> {repo} ({stars})
+        {pricing && (
+          <DetailLink href={pricing}>
+            <EntypoIcon Icon={EntypoCredit} /> Pricing
           </DetailLink>
         )}
       </div>
 
-      <FieldsContainer>
+      {/* <FieldsContainer>
         {fields.map(({ name, label }) => {
           const value = pageContext[name]
           return (
@@ -104,7 +105,7 @@ const Project = ({ pageContext }) => {
             </Field>
           )
         })}
-      </FieldsContainer>
+      </FieldsContainer> */}
 
       <Content>
         <div dangerouslySetInnerHTML={{ __html: content }} />

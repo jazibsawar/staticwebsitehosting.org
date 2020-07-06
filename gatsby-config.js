@@ -7,32 +7,31 @@ const description = oneLine`
 
 module.exports = {
   siteMetadata: {
-    url: 'https://staticwebsitehosting.com',
+    url: 'https://staticwebsitehosting.org',
     title: `Static Website Hosting`,
     description: oneLine`
       Kick off your next, great Gatsby project with this default starter. This barebones starter
       ships with the main Gatsby configuration files you might need.
     `,
     author: `@cosmicjs`,
-    image: 'https://staticgen.com/images/staticgen.png',
+    image: 'https://staticwebsitehosting.org/images/staticwebsitehosting.png',
     repo: 'https://github.com/cosmicjs/staticwebsitehosting.org',
     homeTitle: 'Static Website Hosts | Top Static Website Hosting',
     subtitle: 'A List of Static Website Hosts for Jamstack Sites',
     description,
-    socialPreviewImageFilename: 'staticgen.png',
+    socialPreviewImageFilename: 'staticwebsitehosting.png',
     shareButtons: ['twitter', 'reddit'],
-    shareText: 'Check out Static Website Hosting, a leaderboard of top static website hosts.',
+    shareText: 'Check out staticwebsitehosting.org, a leaderboard of top static website hosts.',
     shareTextProjectStart: 'Check out ',
     shareTextProjectEnd: ', a static website host on the staticwebsitehosting.org leaderboard.',
     footerMarkdown: oneLine`
-      Static Website Hosting is maintained by [Cosmic](https://www.cosmicjs.com), the perfect way to
-      manage content for your [Jamstack sites and apps](https://jamstack.org).
+      Static Website Hosting is maintained by [Cosmic](https://www.cosmicjs.com), which makes a great [Jamstack CMS](https://www.cosmicjs.com/knowledge-base/jamstack-cms) to manage content for your static websites and apps.
     `,
     copyrightName: 'Cosmic JS Inc.',
     promoMarkdown: stripIndent`
       ## Need to connect a CMS for your Jamstack website?
 
-      For generators with the "Install Template" button, you can install a new site from a template
+      For generators with the "Deploy Cosmic Starter" button, you can install a new site from a template
       with one click and connect to your favorite static website hosting provider. Add your content team, set up webhooks for automattic content updates, and more.
     `,
     navLinks: [
@@ -42,9 +41,6 @@ module.exports = {
     ],
     fallbackSortField: 'title',
     sorts: [
-      { field: 'stars', label: 'Stars (7 days)', reverse: true, days: 7 },
-      { field: 'stars', label: 'Stars (30 days)', reverse: true, days: 30 },
-      { field: 'stars', label: 'Stars (total)', reverse: true },
       {
         field: 'followers',
         label: 'Followers (7 days)',

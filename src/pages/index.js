@@ -200,6 +200,7 @@ export const query = graphql`
           description
           homepage
           cosmicapplink
+          pricing
           title
           twitter
         }

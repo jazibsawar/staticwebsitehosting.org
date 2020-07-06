@@ -122,6 +122,7 @@ async function getProjectData(graphql) {
             homepage
             title
             twitter
+            pricing
           }
           parent {
             ... on File {

@@ -1,6 +1,6 @@
-# staticgen.com
+# staticwebsitehosting.org
 
-[staticgen.com](http://staticgen.com), a leaderboard of top open-source static site generators.
+[staticwebsitehosting.org](http://staticwebsitehosting.org), a leaderboard of top open-source static site generators.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/388637c1-8040-4b2d-84b4-1cfa38cd62bb/deploy-status)](https://app.netlify.com/sites/staticgen/deploys)
 
@@ -11,9 +11,8 @@ as a `<name>.md` in the `content/projects` folder.
 
 Make sure to follow the following rules:
 
-- **Static Site Generation:** No "flat-file CMSs" or similar tools. The program must be able to output a static website that can be hosted in places like Netlify, S3 or Github Pages.
-- **Open Source:** The generator must have a public repository on Github that we can link to and pull in stats from.
-- **Stick to the format:** Fill out all the same fields as the other static site generators in `content/projects`.
+- **Static Website Hosting:** No compute-involved website hosting options meaning the hosting provider must have the option to enable a CDN for optimized global static asset distribution.
+- **Stick to the format:** Fill out all the same fields as the other static website hosting providers in `content/projects`.
 - **Short description:** Keep all the details for the body text, keep the description for the overview page short and sweet.
 
 ## Usage
@@ -63,11 +62,11 @@ To run a production build for deployment:
 npm run build
 ```
 
-## Netlify
+## Cosmic
 
-StaticGen.com is built and maintained by [Netlify](https://www.netlify.com), a hosting and automation service for static websites and apps.
+staticwebsitehosting.org is built and maintained by [Cosmic](https://www.cosmicjs.com), a headless CMS to manage content for static websites and apps.
 
 ## License
 
-StaticGen is released under the [MIT License](LICENSE).
+staticwebsitehosting.org is released under the [MIT License](LICENSE).
 Please make sure you understand its [implications and guarantees](https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html).

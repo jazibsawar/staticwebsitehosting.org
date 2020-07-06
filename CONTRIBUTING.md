@@ -9,7 +9,7 @@ To run this project locally, clone the repo and install dependencies:
 
 ```sh
 git clone https://github.com/cosmicjs/staticwebsitehosting.org
-cd staticgen
+cd staticwebsitehosting.org
 npm install
 npm start
 ```
@@ -24,9 +24,9 @@ npm build
 
 ## Pull Requests
 
-We appreciate any pull requests to add projects to StaticGen or improve the project!
+We appreciate any pull requests to add projects to Static Website Hosting or improve the project!
 
 ## License
 
-By contributing to StaticGen, you agree that your contributions will be licensed
+By contributing to Static Website Hosting, you agree that your contributions will be licensed
 under its [MIT license](LICENSE).

@@ -89,38 +89,11 @@ const Card = props => {
     } = {},
     previousStatsAgeInDays,
   } = props
-  console.log(followers)
   return (
     <CardContainer>
       <CardBodyLink to={`/${id}`}>
         <Title small={title && title.length > 14}>{title}</Title>
         <StatsContainer>
-          <Stat
-            key="stars"
-            Icon={() => <Octicon name="star" zoom="100%" />}
-            label="Repo stars"
-            value={stars}
-            change={stars - starsPrevious || 0}
-            indicateColor
-            dataAgeInDays={previousStatsAgeInDays}
-          />
-          <Stat
-            key="issues"
-            Icon={() => <Octicon name="issue-opened" zoom="100%" />}
-            label="Open issues"
-            value={issues}
-            change={issues - issuesPrevious || 0}
-            dataAgeInDays={previousStatsAgeInDays}
-          />
-          <Stat
-            key="forks"
-            Icon={() => <Octicon name="repo-forked" zoom="100%" />}
-            label="Repo forks"
-            value={forks}
-            change={forks - forksPrevious || 0}
-            indicateColor
-            dataAgeInDays={previousStatsAgeInDays}
-          />
           <Stat
             key="followers"
             Icon={() => <TwitterIcon />}

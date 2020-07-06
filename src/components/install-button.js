@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const installButton = styled(({ link, className }) => (
-  <a className={className} href={link}><img alt="" width="30" src="https://web-assets.cosmicjs.com/images/logo.svg" />Install on Cosmic</a>
+  <a className={className} href={link}><img alt="" width="30" src="https://web-assets.cosmicjs.com/images/logo.svg" />Deploy Cosmic Starter</a>
 ))`
   display: flex;
   justify-content: center;
