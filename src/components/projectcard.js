@@ -1,13 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { EntypoTwitter, EntypoCredit } from 'react-entypo'
-
-const TwitterIcon = styled(EntypoTwitter)`
-  width: 16px !important;
-  height: 16px !important;
-  color: #666
-`
+import { EntypoGithub, EntypoCredit } from 'react-entypo'
 
 const CardContainer = styled.div`
   background: #fff;
@@ -136,14 +130,8 @@ const Card = props => {
     <CardContainer>
       <CardBodyLink to={`/${id}`}>
         <Title small={title && title.length > 14}>{title}</Title>
-        {
-          twitter && 
-          <CustomLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={`https://twitter.com/${twitter}`}><TwitterIcon /> Twitter</CustomLink>
-        }
-        {
-          pricing &&
-          <CustomLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={pricing}><EntypoCredit /> Pricing</CustomLink>
-        }
+        <div><EntypoCredit />&nbsp;&nbsp;Free plans available</div>
+        <div><EntypoGithub />&nbsp;&nbsp;Automatic deployment</div>
         <Description>{description}</Description>
       </CardBodyLink>
       {cosmicapplink && (
