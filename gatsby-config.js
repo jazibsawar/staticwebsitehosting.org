@@ -16,7 +16,7 @@ module.exports = {
     author: `@cosmicjs`,
     image: 'https://staticwebsitehosting.org/images/staticwebsitehosting.png',
     repo: 'https://github.com/cosmicjs/staticwebsitehosting.org',
-    homeTitle: 'Static Website Hosts | Top Static Website Hosting',
+    homeTitle: 'Static Website Hosting | Top Static Website Hosting',
     subtitle: 'A List of Static Website Hosts for Jamstack Sites',
     description,
     socialPreviewImageFilename: 'staticwebsitehosting.png',
@@ -31,7 +31,7 @@ module.exports = {
     promoMarkdown: stripIndent`
       ## Need to connect a CMS for your Jamstack website?
 
-      For generators with the "Deploy Cosmic Starter" button, you can install a new site from a template
+      For hosting providers with the "Deploy Cosmic Starter" button, you can install a new site from a template
       with one click and connect to your favorite static website hosting provider. Add your content team, set up webhooks for automattic content updates, and more.
     `,
     navLinks: [

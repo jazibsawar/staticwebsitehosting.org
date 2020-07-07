@@ -13,6 +13,7 @@ const OpenSourceStatChange = styled.div`
 `
 
 const Stat = styled(({ Icon, value, change, indicateColor, label, dataAgeInDays, className }) => {
+  console.log(value)
   const disabled = typeof value !== 'number'
   const changeValue = parseFloat(change, 10) > 0 ? `+${change}` : change
 

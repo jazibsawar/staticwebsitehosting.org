@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import Octicon from 'react-component-octicons'
-import { EntypoTwitter } from 'react-entypo'
+import { EntypoTwitter, EntypoCredit } from 'react-entypo'
 import Stat from './stat'
 import InstallButton from './install-button'
 import DataPoint from './datapoint'
@@ -10,6 +10,7 @@ import DataPoint from './datapoint'
 const TwitterIcon = styled(EntypoTwitter)`
   width: 16px !important;
   height: 16px !important;
+  color: #666
 `
 
 const CardContainer = styled.div`
@@ -73,12 +74,32 @@ const StatsContainer = styled.div`
   justify-content: center;
 `
 
+const DetailLink = styled.a`
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 18px;
+
+  &,
+  &:visited {
+    color: #666;
+  }
+
+  &:link,
+  &:active,
+  &:hover {
+    color: #222;
+    text-decoration: none;
+  }
+`
+
 const Card = props => {
   const {
     id,
     title,
     description,
     cosmicapplink,
+    twitter,
+    pricing,
     fields,
     stats: { stars, issues, forks, followers } = {},
     previousStats: {
@@ -93,21 +114,15 @@ const Card = props => {
     <CardContainer>
       <CardBodyLink to={`/${id}`}>
         <Title small={title && title.length > 14}>{title}</Title>
-        <StatsContainer>
-          <Stat
-            key="followers"
-            Icon={() => <TwitterIcon />}
-            label="Twitter followers"
-            value={followers}
-            change={followers - followersPrevious || 0}
-            indicateColor
-            dataAgeInDays={previousStatsAgeInDays}
-          />
-        </StatsContainer>
+        {
+          twitter && 
+          <DetailLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={`https://twitter.com/${twitter}`}><TwitterIcon /> {twitter}</DetailLink>
+        }
+        {
+          pricing &&
+          <DetailLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={pricing}><EntypoCredit /> Pricing</DetailLink>
+        }
         <Description>{description}</Description>
-        {/* {fields.map(field => (
-          <DataPoint key={field.name} value={props[field.name]} label={field.label} />
-        ))} */}
       </CardBodyLink>
       {cosmicapplink && (
         <InstallButton link={cosmicapplink} />

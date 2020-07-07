@@ -137,7 +137,7 @@ const IndexPage = ({ data }) => {
   const renderProjects = () => {
     const list = sortedProjects.map(project => (
       <li key={project.id}>
-        <ProjectCard fields={siteMeta.fields} {...project} />
+        <ProjectCard {...project} />
       </li>
     ))
     list.splice(3, 0, <PromoCard key="promo" dangerouslySetInnerHTML={{ __html: promoText }} />)
@@ -147,14 +147,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO />
-      <ControlBar
-        currentFilter={filter}
-        currentSort={sort}
-        filters={filters}
-        sorts={siteMeta.sorts}
-        onChangeFilter={handleFilterChange}
-        onChangeSort={handleSortChange}
-      />
       <ProjectsList>{renderProjects()}</ProjectsList>
     </Layout>
   )

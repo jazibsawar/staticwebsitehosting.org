@@ -44,16 +44,16 @@ exports.sourceNodes = async ({
   const filenames = await readdir(`${__dirname}/${projectsPath}`)
   const mapFilenames = async filename => {
     const file = await readFile(`${__dirname}/${projectsPath}/${filename}`, 'utf8')
-    const { repo, repohost, twitter } = matter(file).data
+    const { twitter } = matter(file).data
     const id = filename.slice(0, -3).toLowerCase()
-    if (!repo) {
-      console.error(oneLine`
-        No repo found in the frontmatter for ${projectsPath}/${filename}, skipping. The file or
-        frontmatter may be malformed.
-      `)
-      return
-    }
-    return pickBy({ id, repo, repohost, twitter }, v => v)
+    // if (!repo) {
+    //   console.error(oneLine`
+    //     No repo found in the frontmatter for ${projectsPath}/${filename}, skipping. The file or
+    //     frontmatter may be malformed.
+    //   `)
+    //   return
+    // }
+    return pickBy({ id, twitter }, v => v)
   }
   const projectsMeta = compact(await Promise.all(filenames.map(mapFilenames)))
   const projectsDataRaw = await fetchArchive(projectsMeta, {

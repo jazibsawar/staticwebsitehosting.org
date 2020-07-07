@@ -64,15 +64,11 @@ const Project = ({ pageContext }) => {
     id,
     url,
     title,
-    repo,
-    repohost,
     homepage,
     pricing,
-    stars,
     followers,
     twitter,
     content,
-    fields,
   } = pageContext
 
   return (
@@ -85,7 +81,7 @@ const Project = ({ pageContext }) => {
         </DetailLink>
         {twitter && (
           <DetailLink href={`https://twitter.com/${twitter}`}>
-            <EntypoIcon Icon={EntypoTwitter} /> {twitter} ({followers})
+            <EntypoIcon Icon={EntypoTwitter} /> {twitter}
           </DetailLink>
         )}
         {pricing && (
