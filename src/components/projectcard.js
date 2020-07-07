@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import Octicon from 'react-component-octicons'
 import { EntypoTwitter, EntypoCredit } from 'react-entypo'
-import Stat from './stat'
-import InstallButton from './install-button'
-import DataPoint from './datapoint'
 
 const TwitterIcon = styled(EntypoTwitter)`
   width: 16px !important;
@@ -74,7 +70,7 @@ const StatsContainer = styled.div`
   justify-content: center;
 `
 
-const DetailLink = styled.a`
+const CustomLink = styled.a`
   display: inline-block;
   white-space: nowrap;
   margin-right: 18px;
@@ -89,6 +85,32 @@ const DetailLink = styled.a`
   &:hover {
     color: #222;
     text-decoration: none;
+  }
+`
+
+const CustomLinkInstall = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fcfcfc;
+  border-top: 1px solid #eee;
+  margin: 20px -18px -18px;
+  border-radius: 0 0 8px 8px;
+  color: #374344 !important;
+  font-size: 17px;
+  padding: 11px;
+
+  &,
+  &:link,
+  &:active,
+  &:hover {
+    color: #313d3e;
+    text-decoration: none;
+  }
+
+  img {
+    width: 28px;
+    margin-right: 8px;
   }
 `
 
@@ -116,16 +138,18 @@ const Card = props => {
         <Title small={title && title.length > 14}>{title}</Title>
         {
           twitter && 
-          <DetailLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={`https://twitter.com/${twitter}`}><TwitterIcon /> Twitter</DetailLink>
+          <CustomLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={`https://twitter.com/${twitter}`}><TwitterIcon /> Twitter</CustomLink>
         }
         {
           pricing &&
-          <DetailLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={pricing}><EntypoCredit /> Pricing</DetailLink>
+          <CustomLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={pricing}><EntypoCredit /> Pricing</CustomLink>
         }
         <Description>{description}</Description>
       </CardBodyLink>
       {cosmicapplink && (
-        <InstallButton link={cosmicapplink} />
+        <CustomLinkInstall target="_blank" onClick={(e) => { e.stopPropagation()}} href={cosmicapplink}>
+          <img alt="" width="30" src="https://web-assets.cosmicjs.com/images/logo.svg" />Deploy Cosmic Starter
+        </CustomLinkInstall>
       )}
     </CardContainer>
   )
