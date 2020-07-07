@@ -1,7 +1,7 @@
 ---
 title: GitHub Pages
 homepage: https://pages.github.com/
-description: Websites for you and your projects.
+description: Websites for you and your projects hosted in GitHub.
 twitter: github
 pricing: https://github.com/pricing
 ---
