@@ -108,28 +108,12 @@ const IndexPage = ({ data }) => {
     )
   }, [projects, filter])
 
-  const sortedProjects = useMemo(() => {
-    let count = 0
-    return filteredProjects.sort((aObj, bObj) => {
-      const aCurrent = aObj.stats[sort.field]
-      const bCurrent = bObj.stats[sort.field]
-      const a = sort.days ? aCurrent - (aObj.previousStats || {})[sort.field] || 0 : aCurrent
-      const b = sort.days ? bCurrent - (bObj.previousStats || {})[sort.field] || 0 : bCurrent
-      const types = ['number', 'string']
-      if (a && !b) return -1
-      if (!a && b) return 1
-      if (a && b) return compare(a, b, sort.reverse)
-      return compare(aObj.stats[siteMeta.fallbackSortField], bObj.stats[siteMeta.fallbackSortField])
-    })
-  }, [filteredProjects, sort])
-
-  const filters = useMemo(() => {
-    return siteMeta.filters.map(filter => ({
-      ...filter,
-      values: sortBy(uniq(flatMap(projects, filter.field))),
-    }))
-  }, [projects, siteMeta.filters])
-
+  const sortedProjects = filteredProjects.sort((a, b) => {
+    var textA = a.title.toUpperCase();
+    var textB = b.title.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  })
+  
   const promoText = useMemo(() => {
     return allSiteMetadataMarkdownRemark.find(({ name }) => name === 'promo').html
   }, [allSiteMetadataMarkdownRemark])
