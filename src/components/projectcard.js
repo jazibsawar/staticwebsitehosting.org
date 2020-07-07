@@ -116,7 +116,7 @@ const Card = props => {
         <Title small={title && title.length > 14}>{title}</Title>
         {
           twitter && 
-          <DetailLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={`https://twitter.com/${twitter}`}><TwitterIcon /> {twitter}</DetailLink>
+          <DetailLink target="_blank" onClick={(e) => { e.stopPropagation()}} href={`https://twitter.com/${twitter}`}><TwitterIcon /> Twitter</DetailLink>
         }
         {
           pricing &&
