@@ -25,7 +25,7 @@ module.exports = {
     shareTextProjectStart: 'Check out ',
     shareTextProjectEnd: ', a static website host on the staticwebsitehosting.org leaderboard.',
     footerMarkdown: oneLine`
-      Static Website Hosting is maintained by [Cosmic](https://www.cosmicjs.com), which is the perfect [Jamstack CMS](https://www.cosmicjs.com/knowledge-base/jamstack-cms) for your static websites and apps.
+      Static Website Hosting is maintained by [Cosmic](https://www.cosmicjs.com), the perfect [Jamstack CMS](https://www.cosmicjs.com/knowledge-base/jamstack-cms) for your static websites and apps.
     `,
     copyrightName: 'Cosmic',
     promoMarkdown: stripIndent`
