@@ -27,7 +27,7 @@ module.exports = {
     footerMarkdown: oneLine`
       Static Website Hosting is maintained by [Cosmic](https://www.cosmicjs.com), which makes a great [Jamstack CMS](https://www.cosmicjs.com/knowledge-base/jamstack-cms) to manage content for your static websites and apps.
     `,
-    copyrightName: 'Cosmic JS Inc.',
+    copyrightName: 'Cosmic',
     promoMarkdown: stripIndent`
       ## Need to connect a CMS for your Jamstack website?
 
