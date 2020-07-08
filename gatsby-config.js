@@ -1,7 +1,7 @@
 const { oneLine, stripIndent } = require('common-tags')
 
 const description = oneLine`
-  StaticGen is a leaderboard of the top open source static site generators. Promoting a static
+  Static Website Hosting is a leaderboard of the top static website hosting providers. Promoting a static
   approach to building websites.
 `
 
