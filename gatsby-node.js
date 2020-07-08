@@ -140,16 +140,6 @@ async function getProjectData(graphql) {
           }
         }
       }
-      allProjectStats {
-        nodes {
-          days
-          projects {
-            id
-            followers
-            stars
-          }
-        }
-      }
     }
   `)
 
@@ -158,17 +148,14 @@ async function getProjectData(graphql) {
   }
 
   const { fields } = data.site.siteMetadata
-  const allStats = data.allProjectStats.nodes.find(({ days }) => days === 0).projects
   return data.allMarkdownRemark.nodes.map(
     ({ html: content, frontmatter, parent: { name: id, dir } }) => {
-      const stats = allStats.find(({ id: projectId }) => id === projectId)
       return {
         id,
         dir: last(dir.split('/')),
         content,
         fields,
         frontmatter,
-        stats,
       }
     }
   )

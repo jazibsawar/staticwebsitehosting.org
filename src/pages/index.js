@@ -51,72 +51,33 @@ function getProjectStats(allStats = [], id) {
 
 const IndexPage = ({ data }) => {
   const {
-    allProjectStats: { nodes: allProjectStats },
     allMarkdownRemark: { nodes: allMarkdownRemark },
     allSiteMetadataMarkdownRemark: { nodes: allSiteMetadataMarkdownRemark },
     site: { siteMetadata: siteMeta },
   } = data
-  const [filter, setFilter] = useState({})
-  const [sort, setSort] = useState(siteMeta.sorts[0])
-
-  const defaultPreviousDays = useMemo(() => {
-    return allProjectStats.reduce((acc, { days: d }) => {
-      return d > acc ? d : acc
-    }, 0)
-  }, [allProjectStats])
-
-  const handleFilterChange = (filterName, e) => {
-    setFilter({ ...filter, [filterName]: e.target.value })
-  }
-
-  const handleSortChange = e => {
-    setSort(siteMeta.sorts[e.target.value])
-  }
-
-  const allCurrentStats = useMemo(() => statsForDays(allProjectStats, 0), [allProjectStats])
-  const allPreviousStats = useMemo(() => {
-    return statsForDays(allProjectStats, sort.days || defaultPreviousDays)
-  }, [allProjectStats, sort.days])
 
   const projects = useMemo(() => {
     return allMarkdownRemark
       .filter(({ parent: { dir } }) => dir.endsWith('projects'))
       .map(({ frontmatter, parent }) => {
         const id = parent.name
-        const stats = getProjectStats(allCurrentStats, id) || {}
-        const previousStats = getProjectStats(allPreviousStats, id) || {}
         return {
           ...frontmatter,
           id,
-          stats,
-          previousStats,
-          previousStatsAgeInDays: sort.days || defaultPreviousDays,
         }
       })
-  }, [allMarkdownRemark, allCurrentStats, allPreviousStats, sort.days])
+  }, [allMarkdownRemark])
 
-  const filteredProjects = useMemo(() => {
-    if (isEmpty(filter)) {
-      return projects
-    }
-    const currentFilters = Object.entries(filter).filter(([field, value]) => value)
-    return projects.filter(project =>
-      currentFilters.every(([field, filterValue]) => {
-        const value = project[field]
-        return value && (Array.isArray(value) ? value.includes(filterValue) : value === filterValue)
-      })
-    )
-  }, [projects, filter])
 
-  const sortedProjects = filteredProjects.sort((a, b) => {
+  const promoText = useMemo(() => {
+    return allSiteMetadataMarkdownRemark.find(({ name }) => name === 'promo').html
+  }, [allSiteMetadataMarkdownRemark])
+  
+  const sortedProjects = projects.sort((a, b) => {
     var textA = a.title.toUpperCase();
     var textB = b.title.toUpperCase();
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   })
-  
-  const promoText = useMemo(() => {
-    return allSiteMetadataMarkdownRemark.find(({ name }) => name === 'promo').html
-  }, [allSiteMetadataMarkdownRemark])
 
   const renderProjects = () => {
     const list = sortedProjects.map(project => (
@@ -156,18 +117,6 @@ export const query = graphql`
           days
         }
         fallbackSortField
-      }
-    }
-    allProjectStats {
-      nodes {
-        days
-        projects {
-          id
-          followers
-          forks
-          issues
-          stars
-        }
       }
     }
     allMarkdownRemark {
