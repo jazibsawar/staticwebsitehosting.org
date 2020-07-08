@@ -16,5 +16,3 @@ By unifying the elements of the modern decoupled web, from local development to 
 Our bet on the Jamstack is quickly coming true. The web is rapidly changing away from monolithic to decoupled apps, and web developers are storming ahead with more power than ever. Netlify is built to cater to that movement, and in just a few years we’ve on-boarded more than half a million businesses and developers, and are building and serving millions of web projects daily around the globe.
 
 Fun fact: in the time it took you to read the above, Netlify served over 350,000 requests.
-
-![Image](/images/netlify.png)
