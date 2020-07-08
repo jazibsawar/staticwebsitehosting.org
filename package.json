@@ -1,9 +1,9 @@
 {
-  "name": "staticgen",
+  "name": "staticwebsitehosting.org",
   "private": true,
-  "description": "StaticGen.com, a list of static site generators for Jamstack sites.",
+  "description": "staticwebsitehosting.org, a list of static website hosting providers for Jamstack sites.",
   "version": "3.0.0",
-  "author": "@Netlify",
+  "author": "@cosmicjs",
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
@@ -57,9 +57,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/netlify/staticgen"
+    "url": "https://github.com/cosmicjs/staticwebsitehosting.org"
   },
   "bugs": {
-    "url": "https://github.com/netlify/staticgen/issues"
+    "url": "https://github.com/cosmicjs/staticwebsitehosting.org/issues"
   }
 }
